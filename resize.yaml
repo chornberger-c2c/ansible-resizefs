@@ -12,7 +12,7 @@
 # ansibe-playbook -i ip.add.re.ss, -u root -k resize.yaml -e "resizeVAR=true"
 
 - hosts: all
-  
+
   tasks:
 
   # neue virtuelle Platte kommagetrennt unter "pvs:" anfügen
@@ -21,7 +21,7 @@
     lvg:
       vg: rhel
       pvs: /dev/vda2,/dev/vdb,/dev/vdc
-    
+
   - name: resize FS root
     lvol:
       vg: rhel
@@ -30,19 +30,19 @@
       resizefs: true
     when: resizeRoot == "true"
 
-   - name: resize FS data
-     lvol:
-       vg: rhel
-       lv: data
-       size: +100%FREE
-       resizefs: true
-     when: resizeData == "true"
+  - name: resize FS data
+    lvol:
+      vg: rhel
+      lv: data
+      size: +100%FREE
+      resizefs: true
+    when: resizeData == "true"
 
-   - name: resize FS var
-     lvol:
-       vg: rhel
-       lv: var
-       size: +100%FREE
-       resizefs: true
-     when: resizeVar == "true"
+  - name: resize FS var
+    lvol:
+      vg: rhel
+      lv: var
+      size: +100%FREE
+      resizefs: true
+    when: resizeVar == "true"
 
