@@ -3,13 +3,13 @@
 # call this playbook ..
 
 # to extend root disk:
-# ansibe-playbook -i ip.add.re.ss, -u root -k resize.yaml -e "resizeRoot=true"
+# ansibe-playbook -i hostname.local, -u root -k resize.yaml -e "resizeRoot=true"
 
 # to extend data disk:
-# ansibe-playbook -i ip.add.re.ss, -u root -k resize.yaml -e "resizeData=true"
+# ansibe-playbook -i hostname.local, -u root -k resize.yaml -e "resizeData=true"
 
 # to extend var disk:
-# ansibe-playbook -i ip.add.re.ss, -u root -k resize.yaml -e "resizeVAR=true"
+# ansibe-playbook -i hostname.local, -u root -k resize.yaml -e "resizeVar=true"
 
 - hosts: all
 
